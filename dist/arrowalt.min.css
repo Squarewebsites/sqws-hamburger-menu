@@ -10,3 +10,16 @@
 .header-burger-btn {
   --b-hamburger-animation: arrowalt;
 }
+
+.hamburger {
+  transition: all 0.3s ease;
+}
+
+.hamburger.is-active {
+  animation: arrowalt-animation 0.4s ease forwards;
+}
+
+@keyframes arrowalt-animation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
