@@ -1,58 +1,8 @@
 /*!
  * Hamburgers
  * @description CSS-animated hamburgers for Squarespace website
- * @author @SquareWebsites
+  * @author @SquareWebsites
  * @site https://www.squarewebsites.org
  * @link https://www.squarewebsites.org
  * @origin https://jonsuh.com/hamburgers/
- */
-
-.header-burger-btn {
-  --b-hamburger-animation: slider;
-  --b-hamburger-layer-height: 2px;
-}
-
-.hamburger {
-  display: inline-block;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.hamburger .hamburger-inner,
-.hamburger .hamburger-inner::before,
-.hamburger .hamburger-inner::after {
-  display: block;
-  background-color: #000;
-  height: var(--b-hamburger-layer-height);
-  width: 30px;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.hamburger .hamburger-inner::before,
-.hamburger .hamburger-inner::after {
-  content: '';
-  position: absolute;
-}
-
-.hamburger .hamburger-inner::before {
-  top: -10px;
-}
-
-.hamburger .hamburger-inner::after {
-  bottom: -10px;
-}
-
-.hamburger.is-active .hamburger-inner {
-  transform: rotate(45deg);
-}
-
-.hamburger.is-active .hamburger-inner::before {
-  transform: rotate(90deg);
-  top: 0;
-}
-
-.hamburger.is-active .hamburger-inner::after {
-  transform: rotate(90deg);
-  bottom: 0;
-}
+ */.header-burger-btn{--b-hamburger-layer-height:2px}.burger-inner .bottom-bun,.burger-inner .patty,.burger-inner .top-bun{opacity:0!important}.header--menu-open .header-burger-btn .burger-inner,.header--menu-open .header-burger-btn .burger-inner:after,.header--menu-open .header-burger-btn .burger-inner:before{background-color:var(--menuOverlayNavigationLinkColor)}.header-burger-btn{font:inherit;display:-ms-flexbox;display:flex;overflow:visible;flex-direction:column;box-sizing:content-box;width:35px;height:35px;margin:0;padding:1px 6px;cursor:pointer;transition-timing-function:linear;transition-duration:.15s;transition-property:opacity,filter;text-transform:none;color:inherit;border:0;background-color:transparent;-ms-flex-direction:column;-ms-flex-pack:center;justify-content:center}.header-burger-btn.burger--active:hover,.header-burger-btn:hover{opacity:.7}.header-burger-btn.burger--active .burger-inner,.header-burger-btn.burger--active .burger-inner:after,.header-burger-btn.burger--active .burger-inner:before{background-color:#000;background-color:var(--navigationLinkColor)}.burger-box{position:relative;display:inline-block;width:35px;height:21px}.burger-inner{top:50%;display:block;margin-top:-1.5px}.burger-inner,.burger-inner:after,.burger-inner:before{position:absolute;width:35px;height:var(--b-hamburger-layer-height,3px);transition-timing-function:ease;transition-duration:.15s;transition-property:transform;border-radius:0;background-color:#000;background-color:var(--navigationLinkColor)}.burger-inner:after,.burger-inner:before{display:block;content:""}.burger-inner:before{top:-9px}.burger-inner:after{bottom:-9px}.header-burger-btn .burger-inner{top:1.5px}.header-burger-btn .burger-inner:before{top:9px;transition-timing-function:ease;transition-duration:.15s;transition-property:transform,opacity}.header-burger-btn .burger-inner:after{top:18px}.header-burger-btn.burger--active .burger-inner{transform:translate3d(0,9px,0) rotate(45deg)}.header-burger-btn.burger--active .burger-inner:before{transform:rotate(-45deg) translate3d(-5px,-6px,0);opacity:0}.header-burger-btn.burger--active .burger-inner:after{transform:translate3d(0,-18px,0) rotate(-90deg)}
