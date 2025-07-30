@@ -1,58 +1,23 @@
 /*!
- * Hamburgers
- * @description CSS-animated hamburgers for Squarespace website
- * @author @SquareWebsites
- * @site https://www.squarewebsites.org
- * @link https://www.squarewebsites.org
- * @origin https://jonsuh.com/hamburgers/
+ * Slider Animation - SquareWebsites
  */
 
-.header-burger-btn {
-  --b-hamburger-animation: slider;
-  --b-hamburger-layer-height: 2px;
+ .header-burger-btn[data-animation="slider"] .hamburger span:nth-child(1) {
+  transform-origin: top left;
 }
 
-.hamburger {
-  display: inline-block;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.header-burger-btn[data-animation="slider"] .hamburger span:nth-child(3) {
+  transform-origin: bottom left;
 }
 
-.hamburger .hamburger-inner,
-.hamburger .hamburger-inner::before,
-.hamburger .hamburger-inner::after {
-  display: block;
-  background-color: #000;
-  height: var(--b-hamburger-layer-height);
-  width: 30px;
-  position: relative;
-  transition: all 0.3s ease;
+.header-burger-btn[data-animation="slider"].is-active .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
-.hamburger .hamburger-inner::before,
-.hamburger .hamburger-inner::after {
-  content: '';
-  position: absolute;
+.header-burger-btn[data-animation="slider"].is-active .hamburger span:nth-child(2) {
+  opacity: 0;
 }
 
-.hamburger .hamburger-inner::before {
-  top: -10px;
-}
-
-.hamburger .hamburger-inner::after {
-  bottom: -10px;
-}
-
-.hamburger.is-active .hamburger-inner {
-  transform: rotate(45deg);
-}
-
-.hamburger.is-active .hamburger-inner::before {
-  transform: rotate(90deg);
-  top: 0;
-}
-
-.hamburger.is-active .hamburger-inner::after {
-  transform: rotate(90deg);
-  bottom: 0;
+.header-burger-btn[data-animation="slider"].is-active .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
