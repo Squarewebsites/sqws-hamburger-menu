@@ -9,17 +9,50 @@
 
 .header-burger-btn {
   --b-hamburger-animation: slider;
+  --b-hamburger-layer-height: 2px;
 }
 
 .hamburger {
+  display: inline-block;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.hamburger.is-active {
-  animation: slider-animation 0.4s ease forwards;
+.hamburger .hamburger-inner,
+.hamburger .hamburger-inner::before,
+.hamburger .hamburger-inner::after {
+  display: block;
+  background-color: #000;
+  height: var(--b-hamburger-layer-height);
+  width: 30px;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-@keyframes slider-animation {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.hamburger .hamburger-inner::before,
+.hamburger .hamburger-inner::after {
+  content: '';
+  position: absolute;
+}
+
+.hamburger .hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger .hamburger-inner::after {
+  bottom: -10px;
+}
+
+.hamburger.is-active .hamburger-inner {
+  transform: rotate(45deg);
+}
+
+.hamburger.is-active .hamburger-inner::before {
+  transform: rotate(90deg);
+  top: 0;
+}
+
+.hamburger.is-active .hamburger-inner::after {
+  transform: rotate(90deg);
+  bottom: 0;
 }
