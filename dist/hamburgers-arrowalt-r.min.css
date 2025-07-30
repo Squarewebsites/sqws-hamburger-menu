@@ -1,0 +1,12 @@
+/*!
+ * Hamburgers
+ * @description CSS-animated hamburgers for Squarespace website
+ * @author @SquareWebsites
+ * @site https://www.squarewebsites.org
+ * @link https://www.squarewebsites.org
+ * @origin https://jonsuh.com/hamburgers/
+ */
+
+.header-burger-btn {
+  --b-hamburger-animation: arrowalt-r;
+}
