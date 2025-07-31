@@ -1,4 +1,4 @@
-/* Slider Animation - SQWS Plugin */
+/* Base setup */
 .header-burger-btn {
   --b-hamburger-layer-height: 2px;
   font: inherit;
@@ -20,47 +20,49 @@
   opacity: 0.7;
 }
 
-.burger-box {
+/* Squarespace burger override */
+.header-burger-btn .burger-box {
   position: relative;
   display: inline-block;
   width: 35px;
   height: 21px;
 }
 
-.burger-inner,
-.burger-inner::before,
-.burger-inner::after {
+.header-burger-btn .burger-inner,
+.header-burger-btn .burger-inner::before,
+.header-burger-btn .burger-inner::after {
   position: absolute;
   width: 35px;
   height: var(--b-hamburger-layer-height);
-  background-color: var(--navigationLinkColor, #000);
+  background-color: var(--navigationLinkColor, #fff);
   transition: transform 0.15s ease;
+  content: '';
+  display: block;
 }
 
-.burger-inner {
+.header-burger-btn .burger-inner {
   top: 50%;
   transform: translateY(-50%);
 }
 
-.burger-inner::before {
-  content: "";
+.header-burger-btn .burger-inner::before {
   top: -9px;
 }
 
-.burger-inner::after {
-  content: "";
+.header-burger-btn .burger-inner::after {
   bottom: -9px;
 }
 
-.header-burger-btn.burger--active .burger-inner {
+/* Active/open state — Squarespace adds this class when menu opens */
+.header--menu-open .header-burger-btn .burger-inner {
   transform: translateY(9px) rotate(45deg);
 }
 
-.header-burger-btn.burger--active .burger-inner::before {
+.header--menu-open .header-burger-btn .burger-inner::before {
   transform: rotate(-45deg) translate(-5px, -6px);
   opacity: 0;
 }
 
-.header-burger-btn.burger--active .burger-inner::after {
+.header--menu-open .header-burger-btn .burger-inner::after {
   transform: translateY(-18px) rotate(-90deg);
 }
