@@ -17,6 +17,7 @@
   background: transparent;
   border: none;
   box-sizing: content-box;
+  transition: opacity var(--b-hamburger-speed) ease;
 }
 
 .header-burger-btn:hover,
@@ -46,7 +47,7 @@
   height: var(--b-hamburger-layer-height, 3px);
   background-color: var(--b-hamburger-color);
   transition:
-    transform var(--b-hamburger-speed) ease,
+    transform var(--b-hamburger-speed) cubic-bezier(0.68, -0.55, 0.27, 1.55),
     opacity var(--b-hamburger-speed) ease;
   content: "";
   display: block;
@@ -64,21 +65,16 @@
   top: calc(var(--b-hamburger-size) * 0.5);
 }
 
-/* Active state */
+/* Active state with bounce scaling */
 .header-burger-btn.burger--active .burger-inner {
-  transform: translate3d(0, calc(var(--b-hamburger-size) * 0.25), 0) rotate(45deg);
+  transform: translate3d(0, calc(var(--b-hamburger-size) * 0.25), 0) rotate(45deg) scale(1.25);
 }
 
 .header-burger-btn.burger--active .burger-inner::before {
-  transform: rotate(-45deg) translate3d(-5px, -6px, 0);
+  transform: rotate(-45deg) translate3d(-5px, -6px, 0) scale(1.25);
   opacity: 0;
 }
 
 .header-burger-btn.burger--active .burger-inner::after {
-  transform: translate3d(0, calc(var(--b-hamburger-size) * -0.5), 0) rotate(-90deg);
-}
-
-/* Optional: smooth opacity for hover */
-.header-burger-btn {
-  transition: opacity var(--b-hamburger-speed) ease;
+  transform: translate3d(0, calc(var(--b-hamburger-size) * -0.5), 0) rotate(-90deg) scale(1.25);
 }
