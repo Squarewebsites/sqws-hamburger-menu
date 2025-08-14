@@ -7,9 +7,10 @@
   --b-hamburger-speed: 0.35s; /* Default animation speed — overwritten by JS */
 
   font: inherit;
-  display: flex;
+  display: inline-flex; /* Better compatibility for live site scaling */
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: var(--b-hamburger-size);
   height: var(--b-hamburger-size);
   padding: 1px 6px;
@@ -17,6 +18,7 @@
   background: transparent;
   border: none;
   box-sizing: content-box;
+  overflow: visible !important; /* Ensure scaling not clipped */
   transition: opacity var(--b-hamburger-speed) ease;
 }
 
@@ -37,7 +39,7 @@
   display: inline-block;
   width: var(--b-hamburger-size);
   height: calc(var(--b-hamburger-size) * 0.6);
-  overflow: visible; /* Allow visible scaling/bounce on live site */
+  overflow: visible !important; /* Allow scaling/stretch to be visible live */
 }
 
 .burger-inner,
@@ -47,6 +49,7 @@
   width: var(--b-hamburger-size);
   height: var(--b-hamburger-layer-height, 3px);
   background-color: var(--b-hamburger-color);
+  transform-origin: center center; /* Makes scaling expand evenly */
   transition:
     transform var(--b-hamburger-speed) cubic-bezier(0.68, -0.55, 0.27, 1.55),
     opacity var(--b-hamburger-speed) ease;
