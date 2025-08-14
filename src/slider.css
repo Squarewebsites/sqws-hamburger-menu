@@ -4,7 +4,7 @@
   --b-hamburger-layer-height: 2px; /* Thickness */
   --b-hamburger-color: var(--navigationLinkColor, #000); /* Bar color */
   --b-hamburger-size: 35px; /* Overall size */
-  --b-hamburger-speed: 0.3s; /* Default animation speed — overwritten by JS */
+  --b-hamburger-speed: 0.35s; /* Default animation speed — overwritten by JS */
 
   font: inherit;
   display: flex;
@@ -37,6 +37,7 @@
   display: inline-block;
   width: var(--b-hamburger-size);
   height: calc(var(--b-hamburger-size) * 0.6);
+  overflow: visible; /* Allow visible scaling/bounce on live site */
 }
 
 .burger-inner,
@@ -65,16 +66,16 @@
   top: calc(var(--b-hamburger-size) * 0.5);
 }
 
-/* Active state with bounce scaling */
+/* Active state with springy bounce/stretch */
 .header-burger-btn.burger--active .burger-inner {
-  transform: translate3d(0, calc(var(--b-hamburger-size) * 0.25), 0) rotate(45deg) scale(1.25);
+  transform: translate3d(0, calc(var(--b-hamburger-size) * 0.25), 0) rotate(45deg) scale(1.4);
 }
 
 .header-burger-btn.burger--active .burger-inner::before {
-  transform: rotate(-45deg) translate3d(-5px, -6px, 0) scale(1.25);
+  transform: rotate(-45deg) translate3d(-5px, -6px, 0) scale(1.4);
   opacity: 0;
 }
 
 .header-burger-btn.burger--active .burger-inner::after {
-  transform: translate3d(0, calc(var(--b-hamburger-size) * -0.5), 0) rotate(-90deg) scale(1.25);
+  transform: translate3d(0, calc(var(--b-hamburger-size) * -0.5), 0) rotate(-90deg) scale(1.4);
 }
