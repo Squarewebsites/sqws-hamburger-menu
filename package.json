@@ -1,10 +1,10 @@
 {
   "name": "sqws-hamburger-menu",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Free Squarespace Animated Hamburger Menu from Squarewebsites Plugins",
   "main": "index.js",
   "scripts": {
-    "build": "postcss src/slider.css -o dist/sqws-slider.min.css",
+    "build": "for file in src/*.css; do base=$(basename \"${file%.css}\"); out=dist/sqws-$base.min.css; if [ ! -f \"$out\" ] || [ \"$file\" -nt \"$out\" ]; then postcss \"$file\" -o \"$out\"; fi; done",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
