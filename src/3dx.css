@@ -1,11 +1,5 @@
-/* 3DX Burger Animation */
-.header-burger-btn {
-  --b-duration: 0.45s;
-  --b-ease: cubic-bezier(0.77, 0, 0.175, 1);
-  --b-rotate-angle: 180deg;
-}
-
-.hamburger {
+/* 3DX Hamburger Animation */
+.hamburger-3dx {
   align-items: center;
   background: transparent;
   border: none;
@@ -14,72 +8,51 @@
   justify-content: center;
   padding: 0.75rem;
   transform-style: preserve-3d;
-  transition: transform var(--b-duration) var(--b-ease), opacity var(--b-duration) var(--b-ease);
-  will-change: transform, opacity;
+  perspective: 60px;
+  transition: transform var(--speed, 0.5s) cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.hamburger:focus {
+.hamburger-3dx:focus {
   border-radius: 0.5rem;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
   outline: none;
 }
 
-/* 3dx effect core */
-.hamburger-box {
+.hamburger-3dx .hamburger-inner,
+.hamburger-3dx .hamburger-inner::before,
+.hamburger-3dx .hamburger-inner::after {
   width: 24px;
-  height: 16px;
-  display: inline-block;
-  position: relative;
-  perspective: 60px;
-}
-
-.hamburger-inner {
-  display: block;
-  top: 50%;
-  margin-top: -2px;
-}
-
-.hamburger-inner,
-.hamburger-inner::before,
-.hamburger-inner::after {
-  width: 24px;
-  height: 2px;
-  background-color: #000;
+  height: var(--line-height, 2px);
+  background-color: var(--line-color, #000);
   border-radius: 4px;
   position: absolute;
-  transition: transform var(--b-duration) var(--b-ease), opacity var(--b-duration) var(--b-ease);
+  transition: transform var(--speed, 0.5s) cubic-bezier(0.77, 0, 0.175, 1), opacity var(--speed, 0.5s);
 }
 
-.hamburger-inner::before,
-.hamburger-inner::after {
+.hamburger-3dx .hamburger-inner {
+  top: 50%;
+  margin-top: calc(var(--line-height, 2px) / -2);
+}
+
+.hamburger-3dx .hamburger-inner::before,
+.hamburger-3dx .hamburger-inner::after {
   content: "";
   display: block;
 }
 
-.hamburger-inner::before {
-  top: -7px;
+.hamburger-3dx .hamburger-inner::before { top: -7px; }
+.hamburger-3dx .hamburger-inner::after { bottom: -7px; }
+
+/* Active state */
+.hamburger-3dx.active {
+  transform: rotateY(180deg);
 }
 
-.hamburger-inner::after {
-  bottom: -7px;
-}
-
-/* Rotate container */
-.hamburger.is-active {
-  transform: rotateY(var(--b-rotate-angle));
-}
-
-/* Transform bars into "X" */
-.hamburger.is-active .hamburger-inner {
+.hamburger-3dx.active .hamburger-inner {
   transform: rotate(45deg);
 }
 
-.hamburger.is-active .hamburger-inner::before {
-  transform: rotate(90deg) translateX(-6px);
-  opacity: 0;
-}
-
-.hamburger.is-active .hamburger-inner::after {
-  transform: rotate(-90deg) translateX(-6px);
+.hamburger-3dx.active .hamburger-inner::before,
+.hamburger-3dx.active .hamburger-inner::after {
   opacity: 0;
 }
