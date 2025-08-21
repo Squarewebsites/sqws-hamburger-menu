@@ -1,11 +1,12 @@
 {
   "name": "sqws-hamburger-menu",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Free Squarespace Animated Hamburger Menu from Squarewebsites Plugins",
   "main": "index.js",
   "scripts": {
     "build": "for file in src/*.css; do base=$(basename \"${file%.css}\"); out=dist/sqws-$base.min.css; if [ ! -f \"$out\" ] || [ \"$file\" -nt \"$out\" ]; then postcss \"$file\" -o \"$out\"; fi; done",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "split-hamburgers": "node scripts/split-hamburgers.js"
   },
   "keywords": [],
   "author": "",

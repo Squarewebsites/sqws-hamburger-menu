@@ -1,0 +1,30 @@
+
+/* Default Hamburger Variables */
+.header-burger-btn {
+  --b-hamburger-layer-height: 2px;       /* thickness */
+  --b-hamburger-color: var(--navigationLinkColor, #000);  /* bar color */
+  --b-hamburger-speed: 0.35s;            /* animation speed */
+}
+.header-burger-btn .hamburger-inner,
+.header-burger-btn .hamburger-inner::before,
+.header-burger-btn .hamburger-inner::after {
+  height: var(--b-hamburger-layer-height);
+  background-color: var(--b-hamburger-color);
+  transition-duration: var(--b-hamburger-speed);
+}
+
+/* * Arrow Right
+   */
+.header-burger-btn--arrow-r.is-active .header-burger-btn-inner::before {
+  transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1); }
+
+.header-burger-btn--arrow-r.is-active .header-burger-btn-inner::after {
+  transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1); }
+
+/* Hover & Active States */
+.header-burger-btn.hamburger--arrow-r.burger--active:hover {
+  opacity: 0.7;
+}
+.header-burger-btn.hamburger--arrow-r.burger--active:active {
+  opacity: 0.7;
+}

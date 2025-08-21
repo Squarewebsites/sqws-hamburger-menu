@@ -13,28 +13,28 @@
   transition-duration: var(--b-hamburger-speed);
 }
 
-/* * 3DX
+/* * 3DY Reverse
    */
-.header-burger-btn--3dx .header-burger-btn-box {
+.header-burger-btn--3dy-r .header-burger-btn-box {
   perspective: 80px; }
 
-.header-burger-btn--3dx .header-burger-btn-inner {
+.header-burger-btn--3dy-r .header-burger-btn-inner {
   transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
-  .header-burger-btn--3dx .header-burger-btn-inner::before, .header-burger-btn--3dx .header-burger-btn-inner::after {
+  .header-burger-btn--3dy-r .header-burger-btn-inner::before, .header-burger-btn--3dy-r .header-burger-btn-inner::after {
     transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
 
-.header-burger-btn--3dx.is-active .header-burger-btn-inner {
+.header-burger-btn--3dy-r.is-active .header-burger-btn-inner {
   background-color: transparent !important;
-  transform: rotateY(180deg); }
-  .header-burger-btn--3dx.is-active .header-burger-btn-inner::before {
+  transform: rotateX(180deg); }
+  .header-burger-btn--3dy-r.is-active .header-burger-btn-inner::before {
     transform: translate3d(0, 10px, 0) rotate(45deg); }
-  .header-burger-btn--3dx.is-active .header-burger-btn-inner::after {
+  .header-burger-btn--3dy-r.is-active .header-burger-btn-inner::after {
     transform: translate3d(0, -10px, 0) rotate(-45deg); }
 
 /* Hover & Active States */
-.header-burger-btn.hamburger--3dx.burger--active:hover {
+.header-burger-btn.hamburger--3dy-r.burger--active:hover {
   opacity: 0.7;
 }
-.header-burger-btn.hamburger--3dx.burger--active:active {
+.header-burger-btn.hamburger--3dy-r.burger--active:active {
   opacity: 0.7;
 }

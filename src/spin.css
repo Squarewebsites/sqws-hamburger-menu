@@ -1,0 +1,45 @@
+
+/* Default Hamburger Variables */
+.header-burger-btn {
+  --b-hamburger-layer-height: 2px;       /* thickness */
+  --b-hamburger-color: var(--navigationLinkColor, #000);  /* bar color */
+  --b-hamburger-speed: 0.35s;            /* animation speed */
+}
+.header-burger-btn .hamburger-inner,
+.header-burger-btn .hamburger-inner::before,
+.header-burger-btn .hamburger-inner::after {
+  height: var(--b-hamburger-layer-height);
+  background-color: var(--b-hamburger-color);
+  transition-duration: var(--b-hamburger-speed);
+}
+
+/* * Spin
+   */
+.header-burger-btn--spin .header-burger-btn-inner {
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .header-burger-btn--spin .header-burger-btn-inner::before {
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+  .header-burger-btn--spin .header-burger-btn-inner::after {
+    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.header-burger-btn--spin.is-active .header-burger-btn-inner {
+  transform: rotate(225deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .header-burger-btn--spin.is-active .header-burger-btn-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+  .header-burger-btn--spin.is-active .header-burger-btn-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+/* Hover & Active States */
+.header-burger-btn.hamburger--spin.burger--active:hover {
+  opacity: 0.7;
+}
+.header-burger-btn.hamburger--spin.burger--active:active {
+  opacity: 0.7;
+}

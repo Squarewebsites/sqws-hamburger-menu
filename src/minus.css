@@ -1,0 +1,37 @@
+
+/* Default Hamburger Variables */
+.header-burger-btn {
+  --b-hamburger-layer-height: 2px;       /* thickness */
+  --b-hamburger-color: var(--navigationLinkColor, #000);  /* bar color */
+  --b-hamburger-speed: 0.35s;            /* animation speed */
+}
+.header-burger-btn .hamburger-inner,
+.header-burger-btn .hamburger-inner::before,
+.header-burger-btn .hamburger-inner::after {
+  height: var(--b-hamburger-layer-height);
+  background-color: var(--b-hamburger-color);
+  transition-duration: var(--b-hamburger-speed);
+}
+
+/* * Minus
+   */
+.header-burger-btn--minus .header-burger-btn-inner::before, .header-burger-btn--minus .header-burger-btn-inner::after {
+  transition: bottom 0.08s 0s ease-out, top 0.08s 0s ease-out, opacity 0s linear; }
+
+.header-burger-btn--minus.is-active .header-burger-btn-inner::before, .header-burger-btn--minus.is-active .header-burger-btn-inner::after {
+  opacity: 0;
+  transition: bottom 0.08s ease-out, top 0.08s ease-out, opacity 0s 0.08s linear; }
+
+.header-burger-btn--minus.is-active .header-burger-btn-inner::before {
+  top: 0; }
+
+.header-burger-btn--minus.is-active .header-burger-btn-inner::after {
+  bottom: 0; }
+
+/* Hover & Active States */
+.header-burger-btn.hamburger--minus.burger--active:hover {
+  opacity: 0.7;
+}
+.header-burger-btn.hamburger--minus.burger--active:active {
+  opacity: 0.7;
+}
